@@ -11,73 +11,79 @@ import javax.persistence.Id;
 
 @Entity
 public class User implements Serializable {
-	
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue
-	private Long id;
-	
-	@Column(nullable = false) 
-	private String name;
-	
-	@Column(nullable = false, unique = true) 
-	private String username;
-	
-	@Column(nullable = false, unique = true) 
-	private String token;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	@Column(nullable = false)
-	private UserStatus status;
+    @Column(nullable = false, unique = true)
+    private String username;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(nullable = false)
+    private String password;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(nullable = false)
+    private String creationDate;
 
-	public String getName() {
-		return name;
-	}
+    @Column(nullable = true)
+    private String birthdate;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Column(nullable = false, unique = true)
+    private String token;
 
-	public String getUsername() {
-		return username;
-	}
+    @Column(nullable = false)
+    private UserStatus status;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public UserStatus getStatus() {
-		return status;
-	}
+    public String getCreationDate() { return creationDate; }
+    public void setCreationDate(String creationDate) { this.creationDate = creationDate; }
 
-	public void setStatus(UserStatus status) {
-		this.status = status;
-	}
+    public String getBirthdate() { return birthdate; }
+    public void setBirthdate(String birthdate) { this.birthdate = birthdate; }
 
-	@Override
-	public boolean equals(Object o) {
-		if (o == this) return true;
-		if (!(o instanceof User)) {
-			return false;
-		}
-		User user = (User) o;
-		return this.getId().equals(user.getId());
-	}
+    public String getToken() {
+        return token;
+    }
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+    public void setStatus(UserStatus status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (!(o instanceof User)) {
+            return false;
+        }
+        User user = (User) o;
+        return this.getId().equals(user.getId());
+    }
 }

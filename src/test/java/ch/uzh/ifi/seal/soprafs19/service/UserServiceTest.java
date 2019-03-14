@@ -4,7 +4,6 @@ import ch.uzh.ifi.seal.soprafs19.Application;
 import ch.uzh.ifi.seal.soprafs19.constant.UserStatus;
 import ch.uzh.ifi.seal.soprafs19.entity.User;
 import ch.uzh.ifi.seal.soprafs19.repository.UserRepository;
-import ch.uzh.ifi.seal.soprafs19.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,13 +36,29 @@ public class UserServiceTest {
         Assert.assertNull(userRepository.findByUsername("testUsername"));
 
         User testUser = new User();
-        testUser.setName("testName");
+        testUser.setPassword("testName");
         testUser.setUsername("testUsername");
 
         User createdUser = userService.createUser(testUser);
 
         Assert.assertNotNull(createdUser.getToken());
-        Assert.assertEquals(createdUser.getStatus(),UserStatus.ONLINE);
+        Assert.assertEquals(createdUser.getStatus(),UserStatus.OFFLINE);
         Assert.assertEquals(createdUser, userRepository.findByToken(createdUser.getToken()));
+    }
+
+    @Test
+    public void getUsers() {
+    }
+
+    @Test
+    public void outUser() {
+    }
+
+    @Test
+    public void editUser() {
+    }
+
+    @Test
+    public void logUser() {
     }
 }

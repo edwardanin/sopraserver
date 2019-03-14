@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.soprafs19.errorHandler;
 
-public class LoginUError extends RuntimeException {
-    public LoginUError() {
+public class LoginPError extends RuntimeException {
+    public LoginPError() {
         super();
     }
 }
