@@ -52,13 +52,33 @@ public class UserServiceTest {
 
     @Test
     public void outUser() {
+        /*String username = "testUsername";
+
+        User loggedUser = userService.outUser(username);
+        Assert.assertEquals(loggedUser.getStatus(), UserStatus.OFFLINE);*/
     }
 
     @Test
     public void editUser() {
+        /*String token = "sampletoken";
+        String username = "testUsername";
+        String birthdate = "2012-12-12";
+        User testUser = new User();
+        testUser.setUsername(username);
+        testUser.setBirthdate(birthdate);
+
+        User updatedUser = userService.editUser(token, testUser);*/
     }
 
     @Test
     public void logUser() {
+        /*String username = "testUsername";
+        String password = "password";
+        User testUser = new User();
+        testUser.setPassword(password);
+
+        User loggedUser = userService.logUser(username, testUser);
+        Assert.assertEquals(loggedUser.getUsername(), username);
+        Assert.assertEquals(loggedUser.getPassword(), password);*/
     }
 }
